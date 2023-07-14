@@ -1,0 +1,2 @@
+Convolutional Neural networks are deep learning algorithms that are good with analyzing image data
+a kernel/filter, is a matrix applied to an entire image, in order to create a particular effect
