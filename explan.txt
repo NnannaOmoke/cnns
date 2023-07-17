@@ -1,2 +1,17 @@
 Convolutional Neural networks are deep learning algorithms that are good with analyzing image data
-a kernel/filter, is a matrix applied to an entire image, in order to create a particular effect
+a kernel/filter, is a matrix applied to an entire image, in order to create a particular effect on the image
+anns have problems with image processing due to the massive amounts of parameters present due to the dense layers in the networks
+cnns have perceptrons connected to only one local perceptron. these perceptrons that have been connected to form a kernel, which can find patterns in image data
+note that for images with RGB values, a kernel will exist per color channel. multiple filters can exist per color channel, however.
+pooling layers accept Convolutional layers as an input
+convolutional layers can have the following structures:
+    image -> CLayer -> Pooling -> Dense Layer -> Output 
+    image -> CLayer -> ...Clayer -> Pooling  -> Dense Layer -> Output
+    image -> Clayer -> Pooling -> Clayer -> Pooling ... -> Dense Layer ... -> Output
+The major parameters in a Convo2D object are: filters, kernel_size(tuple), strides, and padding ("same" [pad], "valid" [don't pad])
+for a pooling object (maxpoolnD, avgpoolnD, etc), the neccesary parameter is: pool_size...(usually half the kernel_size)
+
+paramters of a cnn dependent on input include input_shape [CLayer{Convo2D}], the number of units in the output layer should be equal to the number of classes available
+image genertors (keras.preprocessing.image.ImageDataGenerator), is a means of manipulating and generating image data to be used for ML training
+image generators can also create batches from a directory, i.e., they can *flow* data straight from a directory, in the form of batches
+Note that each class must have it's own sub-directory within the train/test batch!!!
